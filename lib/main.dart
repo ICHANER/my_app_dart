@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -94,11 +94,17 @@ class _MyHomePageState extends State<MyHomePage> {
           // axis because Columns are vertical (the cross axis would be
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
+
+
+          
           children: <Widget>[
+
+     
+
             const Text(
               'You have pushed the button this many times:',
             ),
-            Image(image: AssetImage("images/avatar.png"), width: 100.0),
+            Image(image: AssetImage("images/avatar.png"),alignment: Alignment.bottomLeft, width: 100.0),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
@@ -108,7 +114,32 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundColor: Colors.grey[200],
               valueColor: AlwaysStoppedAnimation(Colors.blue),
             ),
+          ListView(
+            shrinkWrap: true, 
+            padding: const EdgeInsets.all(20.0),
+            children: <Widget>[
+              const Text('I\'m dedicating every day to you'),
+              const Text('Domestic life was never quite my style'),
+              const Text('When you smile, you knock me out, I fall apart'),
+              const Text('And I thought I was so smart'),
+            ],
+          ),
+          DecoratedBox(
+          decoration:BoxDecoration(color: Colors.red),
+          //默认原点为左上角，左移20像素，向上平移5像素  
+          child: Transform.translate(
+            offset: Offset(-20.0, -5.0),
+            child: Text("Hello world"),
+          ),
+        ),
+          IconButton(
+            icon: Icon(Icons.thumb_up),
+            onPressed: () {},
+          )
+
           ],
+
+        
         ),
       ),
       
@@ -116,7 +147,13 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+       // This trailing comma makes auto-formatting nicer for build methods.
     );
+    
   }
+  
 }
+
+
+
