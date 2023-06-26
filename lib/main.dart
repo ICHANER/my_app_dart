@@ -98,13 +98,20 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text(
               'You have pushed the button this many times:',
             ),
+            Image(image: AssetImage("images/avatar.png"), width: 100.0),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            // 模糊进度条(会执行一个动画)
+            LinearProgressIndicator(
+              backgroundColor: Colors.grey[200],
+              valueColor: AlwaysStoppedAnimation(Colors.blue),
+            ),
           ],
         ),
       ),
+      
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
